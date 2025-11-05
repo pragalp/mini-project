@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+        /* Body styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #c8f30a, #00c6ff);
+            color: #0c1ee2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container */
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 50px 60px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 15px 0;
+        }
+
+        /* Link styling */
+        ul li a {
+            text-decoration: none;
+            font-size: 25px;
+            color: #ffffff;
+            background-color: #0c1ee2;
+            padding: 12px 25px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        ul li a:hover {
+            background-color: #0815a1;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to My Multi-App Django Project!</h1>
+        <p>Choose a feature:</p>
+        <ul>
+            <li><a href="/calculator/">Calculator</a></li>
+            <li><a href="/clock/">Digital Clock</a></li>
+            <li><a href="/weather/">Weather</a></li>
+            <li><a href="/feedback/">Feedback</a></li>
+        </ul>
+    </div>
+</body>
+</html>

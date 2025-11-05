@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Headlines</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        /* Heading styling */
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        /* List container */
+        ul {
+            list-style: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+        }
+
+        /* Individual news item */
+        li {
+            background-color: #fff;
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        /* Hover effect for news items */
+        li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Article links */
+        a {
+            text-decoration: none;
+            color: #2980b9;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #1abc9c;
+        }
+
+        /* Article description */
+        p {
+            margin-top: 8px;
+            font-size: 1em;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        /* "No news available" styling */
+        li:empty {
+            text-align: center;
+            color: #888;
+            font-style: italic;
+        }
+
+        /* Jokes page link styling */
+        .jokes-link {
+            display: block;
+            text-align: center;
+            max-width: 200px;
+            margin: 20px auto;
+            padding: 12px 20px;
+            background-color: #2980b9;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .jokes-link:hover {
+            background-color: #1abc9c;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <h1>📰 Top Headlines</h1>
+    <ul>
+        {% for article in articles %}
+            <li>
+                <a href="{{ article.url }}" target="_blank">{{ article.title }}</a>
+                <p>{{ article.description }}</p>
+            </li>
+        {% empty %}
+            <li>No news available.</li>
+        {% endfor %}
+    </ul>
+
+    <a class="jokes-link" href="/jokes/">Go to Jokes Page</a>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #c8f30a, #00c6ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .feedback-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 40px 60px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            color: #ffffff;
+            text-align: center;
+            width: 400px;
+            max-width: 90%;
+        }
+
+        h1 {
+            font-size: 40px;
+            background-color: black;
+            color: blanchedalmond;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        form input[type="text"], form textarea {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: none;
+            font-size: 18px;
+        }
+
+        form textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        form button {
+            padding: 12px 30px;
+            font-size: 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: #0c1ee2;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        form button:hover {
+            background-color: #0815a1;
+            transform: scale(1.05);
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #00ff99;
+        }
+
+        @media (max-width: 500px) {
+            .feedback-container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            form input[type="text"], form textarea {
+                font-size: 16px;
+            }
+
+            form button {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="feedback-container">
+        <h1>Feedback</h1>
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Your Name"><br>
+            <textarea name="feedback" placeholder="Your Feedback"></textarea><br>
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

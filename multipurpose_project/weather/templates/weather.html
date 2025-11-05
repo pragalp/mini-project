@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #c8f30a, #00c6ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #0c1ee2;
+        }
+
+        .weather-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 40px 60px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            color: #ffffff;
+        }
+
+        h2 {
+            font-size: 40px;
+            background-color: black;
+            color: blanchedalmond;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 30px;
+            margin: 10px 0;
+        }
+
+        .temp {
+            font-weight: bold;
+            color: #00ff99;
+        }
+
+        .condition {
+            font-style: italic;
+            color: #ffeb3b;
+        }
+
+        @media (max-width: 500px) {
+            .weather-container {
+                padding: 30px 20px;
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+
+            p {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="weather-container">
+        <h2>Weather in {{ city }}</h2>
+        <p class="temp">Temperature: {{ temp }}</p>
+        <p class="condition">Condition: {{ condition }}</p>
+    </div>
+</body>
+</html>
